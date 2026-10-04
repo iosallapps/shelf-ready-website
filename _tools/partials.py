@@ -9,9 +9,9 @@ APP_STORE_URL = "https://apps.apple.com/app/id6818769240"
 APP_ID = "6818769240"
 CONTACT = "iosallapps@icloud.com"
 DEVELOPER = "Darius Cirjan"
-STYLE_VERSION = "2"
-OG_ALT = ("A folded sweater photographed on a green throw, and the same sweater on a clean white "
-          "background with a soft shadow, next to the words: Sell the sweater, not the sofa.")
+STYLE_VERSION = "3"
+OG_ALT = ("An amber serum bottle and a cream jar, half on a stone block in leafy light and half on a "
+          "clean blush background, next to the words: Take the photo. Skip the studio.")
 
 
 def header(current=""):

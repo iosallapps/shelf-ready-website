@@ -103,11 +103,13 @@ def main(pipe, screens):
                 return clean(Image.open(path))
         raise SystemExit(f"no original for {photo}")
 
-    # Hero: the sweater on a green throw, and the same photo after the app, on White.
-    after = render("sweater", "white-matte")
-    crop = framed(subject_box(after), after.size, 4 / 5, 0.62)
-    save(original("sweater").crop(crop), "hero-before", (480, 800, 1100))
-    save(after.crop(crop), "hero-after", (480, 800, 1100))
+    # Hero: the serum and cream jar as photographed on a stone block in leafy light, and the
+    # same photo after the app, on Blush. Chosen from every sample on every background at 2x for
+    # the most natural contact shadow. Both halves share one crop, so they line up exactly.
+    base = render("beauty", "white-matte")
+    crop = framed(subject_box(base), base.size, 4 / 5, 0.5)
+    save(original("beauty").crop(crop), "hero-before", (480, 768))
+    save(render("beauty", "palette-blush").crop(crop), "hero-after", (480, 768))
 
     # Swatch book: the same headphones on all fifteen backgrounds.
     base = render("electronics", "white-matte")

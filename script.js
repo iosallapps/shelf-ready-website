@@ -26,7 +26,7 @@
         var describe = function (value) {
             if (value <= 5) return 'All original photo';
             if (value >= 95) return 'All result';
-            if (value > 45 && value < 55) return 'Half and half';
+            if (value > 25 && value < 60) return 'Half and half';
             return value < 50 ? 'Mostly the original photo' : 'Mostly the result';
         };
 
@@ -66,7 +66,7 @@
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
                     compare.classList.add('is-intro');
-                    set(50);
+                    set(31);
                     setTimeout(function () { compare.classList.remove('is-intro'); }, 1300);
                 });
             });
