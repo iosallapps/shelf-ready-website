@@ -1,0 +1,6 @@
+# robots.txt for shelfreadyapp.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://shelfreadyapp.com/sitemap.xml
