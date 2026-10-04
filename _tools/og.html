@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Source for og-image.png: python3 -m http.server from the site root, then shoot this page at 1200x630. -->
+<html lang="en"><head><meta charset="UTF-8"><title>og</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+.og{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 470px;align-items:center;gap:56px;padding:0 72px;box-sizing:border-box;background:var(--cream);isolation:isolate}
+.og::before{content:"";position:absolute;inset:0;z-index:-1;background:url("../img/leaves-cream-900.webp") right top/cover;opacity:.6}
+.og h1{font-size:64px;margin:0 0 22px}
+.og p{font-size:28px;color:var(--ink-muted);margin:0 0 30px;line-height:1.35}
+.brandrow{display:flex;align-items:center;gap:16px;font-family:var(--serif);font-size:38px;font-weight:600;margin-bottom:28px}
+.brandrow img{width:64px;height:64px;border-radius:15px}
+.art{width:470px;height:470px;border-radius:44px;box-shadow:var(--shadow);object-fit:cover}
+</style></head><body>
+<div class="og">
+  <div>
+    <div class="brandrow"><img src="../img/app-icon-128.webp" alt="">ShelfReady</div>
+    <h1>Product photos that look <em>studio</em> made.</h1>
+    <p>Background remover for sellers. Your photos never leave your phone.</p>
+  </div>
+  <img class="art" src="../img/hero-split-760.webp" alt="">
+</div>
+</body></html>
