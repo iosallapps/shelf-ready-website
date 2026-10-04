@@ -5,7 +5,7 @@
 - index.html and support.html are edited by hand. Their head, header and footer sit between
   <!-- build:NAME --> ... <!-- /build:NAME --> markers and are rewritten from partials.py.
 - privacy.html and terms.html are generated in full from the documents bundled in the app,
-  ~/Developer/ShelfReady/StudioApp/Legal/*.md, so the site and the app cannot disagree.
+  ~/Developer/ShelfReady/StudioApp/Legal/en.lproj/*.md, so the site and the app cannot disagree.
   Rerun this script whenever those files change.
 """
 import html
@@ -17,20 +17,26 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import partials  # noqa: E402
 
 SITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEGAL_DIR = os.path.expanduser("~/Developer/ShelfReady/StudioApp/Legal")
+LEGAL_DIR = os.path.expanduser("~/Developer/ShelfReady/StudioApp/Legal/en.lproj")
 
 HAND_PAGES = {
     "index.html": (
-        "ShelfReady: Product Photos and Background Remover",
-        "Take a photo of what you sell. ShelfReady removes the background on your iPhone and sets "
-        "the item on a clean studio backdrop with a soft shadow, sized for your listing.",
+        "ShelfReady: product photos for people who sell their things",
+        "Take a photo of something you are selling. ShelfReady lifts it off whatever it was lying "
+        "on and sets it on a clean backdrop with a soft shadow, sized for your listing. On your "
+        "iPhone, with nothing uploaded.",
         "",
     ),
     "support.html": (
-        "Support and FAQ | ShelfReady",
+        "Support | ShelfReady",
         "Help with ShelfReady: removing backgrounds, fixing a cutout, free saves, restoring "
         "purchases, managing your subscription, deleting photos and privacy choices.",
         "support.html",
+    ),
+    "404.html": (
+        "Page not found | ShelfReady",
+        "This page is not on shelfreadyapp.com.",
+        "404.html",
     ),
 }
 
@@ -97,10 +103,10 @@ def legal_page(md_name, page_title, description, path):
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    {partials.HEADER}
+    {partials.header()}
 
     <main id="main" class="doc">
-        <div class="container">
+        <div class="wrap">
             <header class="doc-head">
                 <h1>{html.escape(title)}</h1>
                 <p class="doc-meta">{html.escape(byline)}</p>
@@ -131,8 +137,11 @@ def main():
         with open(file, encoding="utf-8") as f:
             page = f.read()
         page = replace_region(page, "head", partials.head(title, description, path))
-        page = replace_region(page, "header", partials.HEADER)
+        page = replace_region(page, "header", partials.header(name))
         page = replace_region(page, "footer", partials.FOOTER)
+        if name == "404.html":
+            # Served for any missing path, however deep, so every link must be root-relative.
+            page = re.sub(r'(href|src)="(?!https?:|mailto:|#|/)(\./)?', r'\1="/', page)
         with open(file, "w", encoding="utf-8") as f:
             f.write(page)
         print("updated", name)

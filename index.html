@@ -2,34 +2,38 @@
 <html lang="en">
 <head>
     <!-- build:head -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>ShelfReady: product photos for people who sell their things</title>
+    <meta name="description" content="Take a photo of something you are selling. ShelfReady lifts it off whatever it was lying on and sets it on a clean backdrop with a soft shadow, sized for your listing. On your iPhone, with nothing uploaded.">
     <meta name="apple-itunes-app" content="app-id=6818769240">
-    <title>ShelfReady: Product Photos and Background Remover</title>
-    <meta name="description" content="Take a photo of what you sell. ShelfReady removes the background on your iPhone and sets the item on a clean studio backdrop with a soft shadow, sized for your listing.">
     <meta name="theme-color" content="#F1E4D4">
+    <meta name="color-scheme" content="light">
     <link rel="canonical" href="https://shelfreadyapp.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ShelfReady">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://shelfreadyapp.com/">
-    <meta property="og:title" content="ShelfReady: Product Photos and Background Remover">
-    <meta property="og:description" content="Take a photo of what you sell. ShelfReady removes the background on your iPhone and sets the item on a clean studio backdrop with a soft shadow, sized for your listing.">
+    <meta property="og:title" content="ShelfReady: product photos for people who sell their things">
+    <meta property="og:description" content="Take a photo of something you are selling. ShelfReady lifts it off whatever it was lying on and sets it on a clean backdrop with a soft shadow, sized for your listing. On your iPhone, with nothing uploaded.">
     <meta property="og:image" content="https://shelfreadyapp.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="The ShelfReady app icon: a knitted jumper on a stone plinth, half on forest green, half on a cream studio wall.">
+    <meta property="og:image:alt" content="A folded sweater photographed on a green throw, and the same sweater on a clean white background with a soft shadow, next to the words: Sell the sweater, not the sofa.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ShelfReady: Product Photos and Background Remover">
-    <meta name="twitter:description" content="Take a photo of what you sell. ShelfReady removes the background on your iPhone and sets the item on a clean studio backdrop with a soft shadow, sized for your listing.">
+    <meta name="twitter:title" content="ShelfReady: product photos for people who sell their things">
+    <meta name="twitter:description" content="Take a photo of something you are selling. ShelfReady lifts it off whatever it was lying on and sets it on a clean backdrop with a soft shadow, sized for your listing. On your iPhone, with nothing uploaded.">
     <meta name="twitter:image" content="https://shelfreadyapp.com/og-image.png">
+    <meta name="twitter:image:alt" content="A folded sweater photographed on a green throw, and the same sweater on a clean white background with a soft shadow, next to the words: Sell the sweater, not the sofa.">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=1">
+    <link rel="preload" href="fonts/albert-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css?v=2">
     <!-- /build:head -->
-    <link rel="preload" as="image" href="img/hero-split-760.webp" imagesrcset="img/hero-split-480.webp 480w, img/hero-split-760.webp 760w" imagesizes="(min-width: 900px) 460px, 90vw">
+    <link rel="preload" as="image" type="image/avif" imagesrcset="img/hero-before-480.avif 480w, img/hero-before-800.avif 800w, img/hero-before-1100.avif 1100w" imagesizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,7 +41,7 @@
       "name": "ShelfReady: Product Photos",
       "applicationCategory": "PhotographyApplication",
       "operatingSystem": "iOS 18.0 or later",
-      "description": "Background remover for sellers. Take a photo of what you sell and ShelfReady removes the background on your iPhone and sets the item on a studio backdrop with a soft shadow, sized for your listing.",
+      "description": "Take a photo of something you are selling. ShelfReady removes the background on your iPhone and sets the item on a clean backdrop with a soft shadow, sized for your listing.",
       "url": "https://shelfreadyapp.com/",
       "downloadUrl": "https://apps.apple.com/app/id6818769240",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -50,17 +54,16 @@
 
     <!-- build:header -->
     <header class="site-header">
-        <div class="container bar">
-            <a class="brand" href="./" aria-label="ShelfReady home">
-                <img src="img/app-icon-128.webp" width="34" height="34" alt="">
+        <div class="wrap">
+            <a class="brand" href="./">
+                <img src="img/app-icon-64.webp" width="32" height="32" alt="">
                 <span>ShelfReady</span>
             </a>
             <nav aria-label="Main">
-                <ul class="nav-links">
-                    <li class="nav-hide"><a href="./#how">How it works</a></li>
-                    <li class="nav-hide"><a href="./#features">Features</a></li>
-                    <li class="nav-hide"><a href="support.html">Support</a></li>
-                    <li><a class="nav-cta" href="https://apps.apple.com/app/id6818769240">Get the app</a></li>
+                <ul class="nav">
+                    <li class="nav-wide"><a href="./#how">How it works</a></li>
+                    <li class="nav-narrow-hide"><a href="support.html">Support</a></li>
+                    <li><a class="nav-app" href="https://apps.apple.com/app/id6818769240">Get the app</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,181 +72,209 @@
 
     <main id="main">
         <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero-grid">
-                <div>
-                    <p class="eyebrow">Background remover for sellers</p>
-                    <h1 id="hero-title">Product photos that look <em>studio</em> made.</h1>
-                    <p class="lede">Take a photo of what you sell. ShelfReady lifts the item off its background on your iPhone and sets it on a clean studio backdrop with a soft shadow, sized for your listing.</p>
-                    <div class="cta-row">
+            <div class="wrap">
+                <div class="hero-copy">
+                    <h1 id="hero-title">Sell the sweater, not the sofa.</h1>
+                    <p class="lede">Take a photo of something you&rsquo;re selling. ShelfReady lifts it off whatever it was lying on and sets it on a clean backdrop with a soft shadow underneath, ready for your listing. It all happens on your iPhone, and nothing is uploaded.</p>
+                    <div class="cta">
                         <a class="badge-link" href="https://apps.apple.com/app/id6818769240">
-                            <img src="img/app-store-black-en-us.svg" width="162" height="54" alt="Download on the App Store">
+                            <img src="img/app-store-black-en-us.svg" width="156" height="52" alt="Download on the App Store">
                         </a>
-                        <p class="cta-note">Free to download. Your first 3 saves are free.</p>
+                        <p>Free to download. Your first 3 saves are free, in full quality.</p>
                     </div>
                 </div>
-                <figure class="hero-art">
-                    <img src="img/hero-split-760.webp" srcset="img/hero-split-480.webp 480w, img/hero-split-760.webp 760w" sizes="(min-width: 900px) 460px, 90vw" width="760" height="760" alt="A folded knitted jumper on a stone plinth, split down the middle: on the left it sits on dark green fabric, on the right on a cream studio wall with soft leaf shadows.">
-                    <figcaption>One photo, two worlds</figcaption>
+
+                <figure class="compare" data-compare>
+                    <div class="compare-frame">
+                        <picture><source type="image/avif" srcset="img/hero-before-480.avif 480w, img/hero-before-800.avif 800w, img/hero-before-1100.avif 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)"><source type="image/webp" srcset="img/hero-before-480.webp 480w, img/hero-before-800.webp 800w, img/hero-before-1100.webp 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)"><img src="img/hero-before-480.jpg" srcset="img/hero-before-480.jpg 480w, img/hero-before-800.jpg 800w, img/hero-before-1100.jpg 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)" width="1100" height="1375" alt="Before: a folded tan sweater photographed on a dark green throw." fetchpriority="high"></picture>
+                        <picture class="compare-after"><source type="image/avif" srcset="img/hero-after-480.avif 480w, img/hero-after-800.avif 800w, img/hero-after-1100.avif 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)"><source type="image/webp" srcset="img/hero-after-480.webp 480w, img/hero-after-800.webp 800w, img/hero-after-1100.webp 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)"><img src="img/hero-after-480.jpg" srcset="img/hero-after-480.jpg 480w, img/hero-after-800.jpg 800w, img/hero-after-1100.jpg 1100w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, calc(100vw - 40px)" width="1100" height="1375" alt="After: the same sweater on a clean white background with a soft shadow."></picture>
+                        <span class="compare-line" aria-hidden="true">
+                            <span class="compare-knob">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+                            </span>
+                        </span>
+                        <span class="compare-tag compare-tag-before" aria-hidden="true">Before</span>
+                        <span class="compare-tag compare-tag-after" aria-hidden="true">After</span>
+                        <input type="range" min="0" max="100" value="50" step="1" aria-label="Compare before and after. Lower values show more of the original photo, higher values more of the result." aria-valuetext="Half and half">
+                    </div>
+                    <figcaption class="caption">A folded sweater on a green throw, and the same photo after ShelfReady, on White. Drag across it to compare. Nothing here was retouched by hand.</figcaption>
                 </figure>
             </div>
         </section>
 
-        <section class="section section-alt" id="how" aria-labelledby="how-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="how-title">From couch photo to <em>listing</em> photo.</h2>
-                    <p>Four steps, all on your phone. No account to create, no uploads.</p>
+        <section class="section" id="backgrounds" aria-labelledby="backgrounds-title">
+            <div class="wrap">
+                <h2 class="section-title" id="backgrounds-title">Fifteen backgrounds to try it on.</h2>
+                <p class="section-intro">Five studio backgrounds and ten colors. In the app you see your own photo on every one before you pick. Here are the same headphones on all fifteen.</p>
+
+                <div class="backdrops">
+                    <figure>
+                        <div class="backdrop-view" data-backdrop-view>
+                            <picture><source type="image/avif" srcset="img/swatch-white-matte-400.avif 400w, img/swatch-white-matte-800.avif 800w" sizes="(min-width: 1240px) 610px, (min-width: 900px) 50vw, calc(100vw - 40px)"><source type="image/webp" srcset="img/swatch-white-matte-400.webp 400w, img/swatch-white-matte-800.webp 800w" sizes="(min-width: 1240px) 610px, (min-width: 900px) 50vw, calc(100vw - 40px)"><img src="img/swatch-white-matte-400.jpg" srcset="img/swatch-white-matte-400.jpg 400w, img/swatch-white-matte-800.jpg 800w" sizes="(min-width: 1240px) 610px, (min-width: 900px) 50vw, calc(100vw - 40px)" width="800" height="800" alt="Black over-ear headphones on a white background, with a soft shadow underneath." loading="lazy" decoding="async"></picture>
+                        </div>
+                        <figcaption class="caption backdrop-name" aria-live="polite">On <span data-backdrop-name>White</span>.</figcaption>
+                    </figure>
+                    <div>
+                        <div class="swatch-group">
+                            <h3 id="studio-label">Studio</h3>
+                            <ul class="swatches" aria-labelledby="studio-label">
+                            <li><button type="button" class="swatch" data-bg="white-matte" data-name="White" aria-pressed="true" style="--chip:#FFFFFF"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">White</span><span class="visually-hidden swatch-sr">White</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="grey-gloss" data-name="Light grey" aria-pressed="false" style="--chip:#EDEDED"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Light grey</span><span class="visually-hidden swatch-sr">Light grey</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="contrast-dark" data-name="Contrast" aria-pressed="false" style="--chip:#FAFAFA"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Contrast</span><span class="visually-hidden swatch-sr">Contrast</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="warm-glass" data-name="Warm" aria-pressed="false" style="--chip:#FDFAF5"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Warm</span><span class="visually-hidden swatch-sr">Warm</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="charcoal" data-name="Charcoal" aria-pressed="false" style="--chip:#2B2B29"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Charcoal</span><span class="visually-hidden swatch-sr">Charcoal</span></button></li>
+                            </ul>
+                        </div>
+                        <div class="swatch-group">
+                            <h3 id="colors-label">Colors</h3>
+                            <ul class="swatches" aria-labelledby="colors-label">
+                            <li><button type="button" class="swatch" data-bg="palette-cream" data-name="Cream" aria-pressed="false" style="--chip:#F5F0E8"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Cream</span><span class="visually-hidden swatch-sr">Cream</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-bone" data-name="Bone" aria-pressed="false" style="--chip:#EAE3D6"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Bone</span><span class="visually-hidden swatch-sr">Bone</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-blush" data-name="Blush" aria-pressed="false" style="--chip:#F0DBD5"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Blush</span><span class="visually-hidden swatch-sr">Blush</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-sage" data-name="Sage" aria-pressed="false" style="--chip:#CBD3C3"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Sage</span><span class="visually-hidden swatch-sr">Sage</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-powder" data-name="Powder" aria-pressed="false" style="--chip:#CEDDE8"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Powder</span><span class="visually-hidden swatch-sr">Powder</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-sand" data-name="Sand" aria-pressed="false" style="--chip:#DCC9AB"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Sand</span><span class="visually-hidden swatch-sr">Sand</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-stone" data-name="Stone" aria-pressed="false" style="--chip:#B5AFA6"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Stone</span><span class="visually-hidden swatch-sr">Stone</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-terracotta" data-name="Terracotta" aria-pressed="false" style="--chip:#C0785C"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Terracotta</span><span class="visually-hidden swatch-sr">Terracotta</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-slate" data-name="Slate" aria-pressed="false" style="--chip:#6E7A85"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Slate</span><span class="visually-hidden swatch-sr">Slate</span></button></li>
+                            <li><button type="button" class="swatch" data-bg="palette-navy" data-name="Navy" aria-pressed="false" style="--chip:#26324B"><span class="swatch-chip" aria-hidden="true"></span><span class="swatch-label">Navy</span><span class="visually-hidden swatch-sr">Navy</span></button></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <ol class="steps">
-                    <li class="card step">
-                        <h3>Pick or take a photo</h3>
-                        <p>Shoot with the camera inside the app, or pick up to 10 photos from your library at once.</p>
+            </div>
+        </section>
+
+        <section class="section" id="how" aria-labelledby="how-title">
+            <div class="wrap">
+                <h2 class="section-title" id="how-title">Four steps, all on the phone.</h2>
+                <p class="section-intro">No account to make, nothing to upload, no computer needed.</p>
+                <ol class="steps" tabindex="0" aria-label="Steps, with screens from the app">
+                    <li class="step">
+                        <div class="step-screen"><picture><source type="image/avif" srcset="img/screen-new-360.avif 360w, img/screen-new-640.avif 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><source type="image/webp" srcset="img/screen-new-360.webp 360w, img/screen-new-640.webp 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><img src="img/screen-new-360.jpg" srcset="img/screen-new-360.jpg 360w, img/screen-new-640.jpg 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw" width="360" height="782" alt="The app's New listing photo screen, with a space to choose a photo and a button to take one instead." loading="lazy" decoding="async"></picture></div>
+                        <span class="step-number">Step 1</span>
+                        <h3>Shoot it, or pick it</h3>
+                        <p>Take a photo with the camera in the app, or pick up to 10 from your library. One item on a plain surface, in good light, works best.</p>
                     </li>
-                    <li class="card step">
+                    <li class="step">
+                        <div class="step-screen"><picture><source type="image/avif" srcset="img/screen-result-360.avif 360w, img/screen-result-640.avif 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><source type="image/webp" srcset="img/screen-result-360.webp 360w, img/screen-result-640.webp 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><img src="img/screen-result-360.jpg" srcset="img/screen-result-360.jpg 360w, img/screen-result-640.jpg 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw" width="360" height="782" alt="A result in the app: a sweater on stone, split by a slider, the right half on a clean white background." loading="lazy" decoding="async"></picture></div>
+                        <span class="step-number">Step 2</span>
                         <h3>The background comes off</h3>
-                        <p>ShelfReady finds the item and removes the background on your iPhone. If it picks the wrong thing, draw a box around the item and it tries again.</p>
+                        <p>ShelfReady finds the item and lifts it off the couch, the floor or the bed. Drag across the result to see it next to your photo.</p>
                     </li>
-                    <li class="card step">
-                        <h3>Choose a backdrop</h3>
-                        <p>Set the item on a studio background or a colour, with a soft contact shadow so it looks photographed on a table.</p>
+                    <li class="step">
+                        <div class="step-screen"><picture><source type="image/avif" srcset="img/screen-batch-360.avif 360w, img/screen-batch-640.avif 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><source type="image/webp" srcset="img/screen-batch-360.webp 360w, img/screen-batch-640.webp 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><img src="img/screen-batch-360.jpg" srcset="img/screen-batch-360.jpg 360w, img/screen-batch-640.jpg 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw" width="360" height="782" alt="A batch of six photos in the app, with the studio backgrounds and colors to choose from." loading="lazy" decoding="async"></picture></div>
+                        <span class="step-number">Step 3</span>
+                        <h3>Choose a background</h3>
+                        <p>Five studio backgrounds and ten colors. In a batch, one background goes on the lot and any single photo can be switched on its own.</p>
                     </li>
-                    <li class="card step">
-                        <h3>Save at marketplace sizes</h3>
-                        <p>Tell the app where you sell and every save comes out in the shape and size that marketplace asks for.</p>
+                    <li class="step">
+                        <div class="step-screen"><picture><source type="image/avif" srcset="img/screen-gallery-360.avif 360w, img/screen-gallery-640.avif 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><source type="image/webp" srcset="img/screen-gallery-360.webp 360w, img/screen-gallery-640.webp 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw"><img src="img/screen-gallery-360.jpg" srcset="img/screen-gallery-360.jpg 360w, img/screen-gallery-640.jpg 640w" sizes="(min-width: 1000px) 270px, (min-width: 560px) 44vw, 72vw" width="360" height="782" alt="The app's gallery: a handbag, a sneaker, a serum bottle and headphones, each on its own background." loading="lazy" decoding="async"></picture></div>
+                        <span class="step-number">Step 4</span>
+                        <h3>Save it, sized for your listing</h3>
+                        <p>Every save comes out in the shape and size your marketplace asks for. The gallery keeps it, with the original, for next time.</p>
                     </li>
                 </ol>
-
-                <div class="compare">
-                    <figure>
-                        <img src="img/before-600.webp" srcset="img/before-360.webp 360w, img/before-600.webp 600w" sizes="(min-width: 800px) 366px, 45vw" width="600" height="895" loading="lazy" alt="Before: a knitted jumper photographed on dark green fabric.">
-                        <figcaption>Your photo</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="img/after-600.webp" srcset="img/after-360.webp 360w, img/after-600.webp 600w" sizes="(min-width: 800px) 366px, 45vw" width="600" height="895" loading="lazy" alt="After: the same jumper on a clean white studio background with a soft shadow.">
-                        <figcaption>Ready for your listing</figcaption>
-                    </figure>
-                </div>
             </div>
         </section>
 
-        <section class="section" id="features" aria-labelledby="features-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="features-title">Everything a <em>listing</em> needs.</h2>
-                    <p>Built for anyone photographing something to sell, one item or a whole shelf.</p>
-                </div>
-                <div class="features">
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg>
+        <section class="section" id="what-you-sell" aria-labelledby="sell-title">
+            <div class="wrap">
+                <h2 class="section-title" id="sell-title">Tell it what you sell.</h2>
+                <p class="section-intro">Clothing, sneakers, bags, watches, electronics or beauty. Each one opens on a background that suits it, and you can switch whenever you like. The small picture is the photo it started from.</p>
+                <ul class="categories">
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-clothing-420.avif 420w, img/cat-clothing-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-clothing-420.webp 420w, img/cat-clothing-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-clothing-420.jpg" srcset="img/cat-clothing-420.jpg 420w, img/cat-clothing-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="A folded sweater on a white background with a soft shadow." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-clothing-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-clothing-before-260.jpg" srcset="img/cat-clothing-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: a sweater on a stone block in leafy light." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>Five studio backgrounds</h3>
-                        <p>White, light grey, contrast, warm and charcoal, plus ten colours from cream and sage to terracotta and navy. You see your own photo on each one before you choose.</p>
-                        <ul class="swatches" aria-label="The ten colours">
-                            <li style="background:#F5F0E8" title="Cream"><span class="visually-hidden">Cream</span></li>
-                            <li style="background:#EAE3D6" title="Bone"><span class="visually-hidden">Bone</span></li>
-                            <li style="background:#F0DBD5" title="Blush"><span class="visually-hidden">Blush</span></li>
-                            <li style="background:#CBD3C3" title="Sage"><span class="visually-hidden">Sage</span></li>
-                            <li style="background:#CEDDE8" title="Powder"><span class="visually-hidden">Powder</span></li>
-                            <li style="background:#DCC9AB" title="Sand"><span class="visually-hidden">Sand</span></li>
-                            <li style="background:#B5AFA6" title="Stone"><span class="visually-hidden">Stone</span></li>
-                            <li style="background:#C0785C" title="Terracotta"><span class="visually-hidden">Terracotta</span></li>
-                            <li style="background:#6E7A85" title="Slate"><span class="visually-hidden">Slate</span></li>
-                            <li style="background:#26324B" title="Navy"><span class="visually-hidden">Navy</span></li>
-                        </ul>
-                    </article>
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+                        <p class="caption">Clothing opens on White.</p>
+                    </li>
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-sneakers-420.avif 420w, img/cat-sneakers-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-sneakers-420.webp 420w, img/cat-sneakers-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-sneakers-420.jpg" srcset="img/cat-sneakers-420.jpg 420w, img/cat-sneakers-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="A white sneaker on a light grey background." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-sneakers-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-sneakers-before-260.jpg" srcset="img/cat-sneakers-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: a sneaker on a stone block." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>Fine-tune</h3>
-                        <p>Adjust the shadow, the background warmth, the brightness and the contrast on any result, then drag across the photo to compare it with the original.</p>
-                    </article>
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="13" height="13" rx="3"/><path d="M4 16V6a2 2 0 0 1 2-2h10"/></svg>
+                        <p class="caption">Sneakers open on Light grey.</p>
+                    </li>
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-bags-420.avif 420w, img/cat-bags-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-bags-420.webp 420w, img/cat-bags-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-bags-420.jpg" srcset="img/cat-bags-420.jpg 420w, img/cat-bags-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="A black handbag and a wallet on a light grey background." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-bags-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-bags-before-260.jpg" srcset="img/cat-bags-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: a handbag and wallet on a stone block." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>A whole pile at once</h3>
-                        <p>Pick up to 10 photos and ShelfReady works through them while you watch: one background for the lot, any single photo switchable on its own.</p>
-                    </article>
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
+                        <p class="caption">Bags open on Light grey.</p>
+                    </li>
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-watches-420.avif 420w, img/cat-watches-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-watches-420.webp 420w, img/cat-watches-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-watches-420.jpg" srcset="img/cat-watches-420.jpg 420w, img/cat-watches-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="A steel watch with a black dial on a charcoal background." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-watches-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-watches-before-260.jpg" srcset="img/cat-watches-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: a watch on a stone block." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>Sized for where you sell</h3>
-                        <p>Presets for seven popular marketplaces: square, 4:3 or portrait 3:4, as a JPEG. Or keep your own shape at full size, in JPEG or HEIC. Save to Photos or share straight to another app.</p>
-                    </article>
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" stroke-dasharray="3 3"/><path d="M9 12l2 2 4-4"/></svg>
+                        <p class="caption">Watches open on Charcoal.</p>
+                    </li>
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-electronics-420.avif 420w, img/cat-electronics-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-electronics-420.webp 420w, img/cat-electronics-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-electronics-420.jpg" srcset="img/cat-electronics-420.jpg 420w, img/cat-electronics-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="Black headphones on a near-white background." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-electronics-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-electronics-before-260.jpg" srcset="img/cat-electronics-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: headphones on a stone block." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>Fix the cutout</h3>
-                        <p>Cutout not right? Draw a box around the item you want to keep and the app cuts it out again. Prefer the real setting? Keep the original background and just fix the light.</p>
-                    </article>
-                    <article class="card feature">
-                        <div class="feature-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
+                        <p class="caption">Electronics opens on Contrast.</p>
+                    </li>
+                    <li>
+                        <div class="category-photo">
+                            <picture><source type="image/avif" srcset="img/cat-beauty-420.avif 420w, img/cat-beauty-700.avif 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><source type="image/webp" srcset="img/cat-beauty-420.webp 420w, img/cat-beauty-700.webp 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw"><img src="img/cat-beauty-420.jpg" srcset="img/cat-beauty-420.jpg 420w, img/cat-beauty-700.jpg 700w" sizes="(min-width: 1240px) 384px, (min-width: 760px) 31vw, 46vw" width="700" height="700" alt="An amber serum bottle and a cream jar on a warm off-white background." loading="lazy" decoding="async"></picture>
+                            <div class="category-before"><picture><source type="image/webp" srcset="img/cat-beauty-before-260.webp 260w" sizes="(min-width: 760px) 100px, 14vw"><img src="img/cat-beauty-before-260.jpg" srcset="img/cat-beauty-before-260.jpg 260w" sizes="(min-width: 760px) 100px, 14vw" width="260" height="260" alt="Before: a serum bottle and jar on a stone block." loading="lazy" decoding="async"></picture></div>
                         </div>
-                        <h3>Your gallery</h3>
-                        <p>Finished photos are kept in the app with their originals, so you can come back later and try another background without shooting the item again.</p>
-                    </article>
-                </div>
+                        <p class="caption">Beauty opens on Warm.</p>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <section class="section section-alt" aria-labelledby="works-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="works-title">Made for what you <em>sell</em>.</h2>
-                    <p>Clothing, sneakers, bags, watches, electronics and beauty. Each category opens on a background that suits it.</p>
+        <section class="section" id="features" aria-labelledby="details-title">
+            <div class="wrap split">
+                <div>
+                    <h2 class="section-title" id="details-title">The finer controls.</h2>
+                    <p class="section-intro">For when the first try isn&rsquo;t quite it, and for the tenth item of the day.</p>
                 </div>
-                <div class="gallery">
-                    <figure>
-                        <img src="img/sample-sneakers-640.webp" srcset="img/sample-sneakers-360.webp 360w, img/sample-sneakers-640.webp 640w" sizes="(min-width: 900px) 260px, 45vw" width="640" height="640" loading="lazy" alt="A white sneaker on a stone plinth in leaf-dappled light.">
-                        <figcaption>Sneakers</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="img/sample-bags-640.webp" srcset="img/sample-bags-360.webp 360w, img/sample-bags-640.webp 640w" sizes="(min-width: 900px) 260px, 45vw" width="640" height="640" loading="lazy" alt="A black handbag and a matching wallet on a stone plinth.">
-                        <figcaption>Bags</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="img/sample-electronics-640.webp" srcset="img/sample-electronics-360.webp 360w, img/sample-electronics-640.webp 640w" sizes="(min-width: 900px) 260px, 45vw" width="640" height="640" loading="lazy" alt="Black over-ear headphones on a stone plinth.">
-                        <figcaption>Electronics</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="img/sample-beauty-640.webp" srcset="img/sample-beauty-360.webp 360w, img/sample-beauty-640.webp 640w" sizes="(min-width: 900px) 260px, 45vw" width="640" height="640" loading="lazy" alt="An amber serum bottle and a cream jar on a stone plinth.">
-                        <figcaption>Beauty</figcaption>
-                    </figure>
-                </div>
+                <dl class="details">
+                        <div class="detail"><dt>Fix the cutout</dt><dd>If it picks the wrong thing, draw a box around the item you want to keep and it cuts again from inside the box.</dd></div>
+                        <div class="detail"><dt>Keep the real setting</dt><dd>Sometimes the room is part of the sale. Keep the original background and just fix the light.</dd></div>
+                        <div class="detail"><dt>Fine-tune</dt><dd>Adjust the shadow, the background warmth, the brightness and the contrast on any result.</dd></div>
+                        <div class="detail"><dt>Up to ten at once</dt><dd>Pick up to 10 photos and watch them come through one by one. With a subscription, save the whole batch in one go.</dd></div>
+                        <div class="detail"><dt>Sized for where you sell</dt><dd>Presets for seven popular marketplaces: square, 4:3 or portrait 3:4, as a JPEG. Or keep your own shape at full size, in JPEG or HEIC.</dd></div>
+                        <div class="detail"><dt>Save or share</dt><dd>Save to Photos, or share straight to another app.</dd></div>
+                        <div class="detail"><dt>A gallery with the originals</dt><dd>Finished photos stay in the app next to the photo they came from, so you can try another background later without shooting the item again. Settings shows the space they use and clears it.</dd></div>
+                </dl>
             </div>
         </section>
 
-        <section class="section privacy-band" id="privacy" aria-labelledby="privacy-title">
-            <div class="container">
-                <div class="card privacy-card">
-                    <h2 id="privacy-title">Your photos never <em>leave</em> your phone.</h2>
-                    <p>Finding the item, removing the background and balancing the light all happen on your iPhone, using Apple's on-device frameworks. Your photos are never uploaded, and there is no account to create.</p>
-                    <p>The free version shows ads, and the app uses analytics and crash reports to improve, with your consent where the law asks for it. Where the app offers it, you can change your choices in Settings at any time. The <a href="privacy.html">Privacy Policy</a> explains exactly what is collected and why.</p>
+        <section class="privacy" id="privacy" aria-labelledby="privacy-title">
+            <div class="wrap">
+                <h2 id="privacy-title">Your photos stay on your phone.</h2>
+                <div class="privacy-body">
+                    <p>Finding the item, removing the background and balancing the light all happen on your iPhone, using Apple&rsquo;s on-device frameworks. Your photos are never uploaded, and there is no account to make.</p>
+                    <p>The rest, plainly: the free version shows ads, and the app uses analytics and crash reports, with your consent where the law asks for it. Where consent is asked, you can change your answer in the app&rsquo;s Settings. The <a href="privacy.html">Privacy Policy</a> lists exactly what is collected and why.</p>
                 </div>
             </div>
         </section>
 
         <section class="section" id="pricing" aria-labelledby="pricing-title">
-            <div class="container">
-                <div class="section-head">
-                    <h2 id="pricing-title">Free to try, <em>Premium</em> to keep going.</h2>
+            <div class="wrap split">
+                <div>
+                    <h2 class="section-title" id="pricing-title">Try it on your own things first.</h2>
+                    <p class="section-intro">Process as many photos as you like and try every background. A subscription is only needed to keep saving after the first three, or to save a whole batch at once.</p>
                 </div>
+                <div>
                 <div class="plans">
-                    <div class="card">
+                    <div class="plan">
                         <h3>Free</h3>
                         <ul>
-                            <li>Process photos and try every background</li>
+                            <li>Process any photo and try every background</li>
                             <li>Your first 3 saves are free, in full quality</li>
-                            <li>Free use includes ads</li>
+                            <li>Free use shows ads</li>
                         </ul>
                     </div>
-                    <div class="card">
-                        <h3>ShelfReady Premium</h3>
+                    <div class="plan">
+                        <h3>With a subscription</h3>
                         <ul>
                             <li>Unlimited saving and sharing</li>
                             <li>Save a whole batch at once</li>
@@ -251,17 +282,18 @@
                         </ul>
                     </div>
                 </div>
-                <p class="fine-print">Premium is an auto-renewing subscription, weekly with a free trial for eligible new subscribers, or monthly. Prices for your region are shown in the app before you buy. Payment is handled by Apple, and you can cancel at any time in your Apple Account settings.</p>
+                <p class="fine-print">The subscription renews automatically, weekly with a free trial for eligible new subscribers, or monthly. A yearly plan or a one-time purchase may also be offered in the app. The app shows the price for your region before you buy. Apple handles the payment, and you can cancel at any time in your Apple Account settings.</p>
+                </div>
             </div>
         </section>
 
-        <section class="final-cta" aria-labelledby="cta-title">
-            <div class="container">
-                <img class="app-icon" src="img/app-icon-256.webp" width="88" height="88" alt="">
-                <h2 id="cta-title">Get your shelf <em>ready</em>.</h2>
-                <p>ShelfReady is free to download for iPhone.</p>
+        <section class="closing" aria-labelledby="closing-title">
+            <div class="wrap closing-inner">
+                <img class="closing-icon" src="img/app-icon-256.webp" width="76" height="76" alt="" loading="lazy">
+                <h2 id="closing-title">Try it on the next thing you sell.</h2>
+                <p>ShelfReady is free on the App Store, for iPhone.</p>
                 <a class="badge-link" href="https://apps.apple.com/app/id6818769240">
-                    <img src="img/app-store-black-en-us.svg" width="162" height="54" alt="Download on the App Store">
+                    <img src="img/app-store-black-en-us.svg" width="156" height="52" alt="Download on the App Store" loading="lazy">
                 </a>
             </div>
         </section>
@@ -269,29 +301,28 @@
 
     <!-- build:footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
+        <div class="wrap">
+            <div class="footer-top">
                 <div>
-                    <a class="brand" href="./" aria-label="ShelfReady home">
-                        <img src="img/app-icon-128.webp" width="34" height="34" alt="">
+                    <a class="brand" href="./">
+                        <img src="img/app-icon-64.webp" width="32" height="32" alt="" loading="lazy">
                         <span>ShelfReady</span>
                     </a>
-                    <p>Product photos for sellers, made on your iPhone.<br>
-                    Contact: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a></p>
+                    <p>For iPhone. Questions or problems: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a></p>
                 </div>
                 <nav aria-label="Footer">
                     <ul class="footer-links">
+                        <li><a href="support.html">Support</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Use</a></li>
-                        <li><a href="support.html">Support</a></li>
                         <li><a href="https://apps.apple.com/app/id6818769240">App Store</a></li>
                     </ul>
                 </nav>
             </div>
-            <p class="legal-credit">&copy; 2026 Darius Cirjan. Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+            <p class="footer-note">&copy; 2026 Darius Cirjan. Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
         </div>
     </footer>
     <!-- /build:footer -->
-    <script src="script.js" defer></script>
+    <script src="script.js?v=2" defer></script>
 </body>
 </html>
