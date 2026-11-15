@@ -904,3 +904,31 @@ a:hover { color: var(--forest-deep); text-decoration-thickness: 2px; }
     .site-header nav, .skip-link, .badge-link, .compare input { display: none; }
     body { background: #fff; }
 }
+
+/* ---------- legal pages: contents, sections and the services table ---------- */
+.legal-page { max-width: 46rem; }
+.legal-lang { margin: 0 0 1rem; text-align: right; font-size: 0.9rem; }
+.legal-page h1 { font-family: var(--serif, inherit); margin-bottom: 0.4rem; }
+.legal-page .last-updated { color: var(--ink-soft); margin-bottom: 1.5rem; }
+.legal-page h2 { margin: 2.2rem 0 0.6rem; }
+.legal-page p, .legal-page ul { margin-top: 0.9rem; }
+.legal-page ul { padding-left: 1.2rem; }
+.legal-page li + li { margin-top: 0.5rem; }
+.legal-page a { overflow-wrap: anywhere; }
+.legal-toc { margin: 0 0 1rem; padding: 1rem 1.25rem; border: 1px solid var(--ink); }
+.legal-toc ol { margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 2rem; }
+.legal-toc li { break-inside: avoid; margin-bottom: 0.3rem; }
+.legal-section { scroll-margin-top: 5rem; }
+.table-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--ink); }
+.legal-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5; }
+.legal-table th, .legal-table td { text-align: left; vertical-align: top; padding: 0.7rem 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+.legal-table thead th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.legal-table tbody tr:last-child > * { border-bottom: 0; }
+@media (max-width: 640px) {
+    .legal-toc ol { columns: 1; }
+    .legal-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .legal-table, .legal-table tbody, .legal-table tr, .legal-table th, .legal-table td { display: block; width: 100%; }
+    .legal-table tr { padding: 0.8rem; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+    .legal-table th, .legal-table td { border: 0; padding: 0.2rem 0; }
+    .legal-table td::before { content: attr(data-label); display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+}

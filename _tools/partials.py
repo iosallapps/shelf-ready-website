@@ -7,9 +7,9 @@ and footer are identical everywhere and change in one place.
 SITE = "https://shelfreadyapp.com"
 APP_STORE_URL = "https://apps.apple.com/app/id6818769240"
 APP_ID = "6818769240"
-CONTACT = "iosallapps@icloud.com"
-DEVELOPER = "Darius Cirjan"
-STYLE_VERSION = "3"
+CONTACT = "iosallapps@gmail.com"
+DEVELOPER = "Visto Apps, the brand of Darius Cirjan"
+STYLE_VERSION = "4"
 OG_ALT = ("An amber serum bottle and a cream jar, half on a stone block in leafy light and half on a "
           "clean blush background, next to the words: Take the photo. Skip the studio.")
 
