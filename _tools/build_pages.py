@@ -105,7 +105,10 @@ def replace_region(page, name, content):
     pattern = re.compile(rf"(<!-- build:{name} -->)(.*?)(\s*<!-- /build:{name} -->)", re.S)
     if not pattern.search(page):
         raise SystemExit(f"missing build:{name} marker")
-    return pattern.sub(lambda m: m.group(1) + "\n    " + content + m.group(3), page)
+    # Rebuild the closing marker too: keeping the old whitespace added a blank line per run
+    # on pages whose region is empty (404).
+    body = "\n    " + content if content.strip() else ""
+    return pattern.sub(lambda m: m.group(1) + body + "\n    <!-- /build:" + name + " -->", page)
 
 
 def main():

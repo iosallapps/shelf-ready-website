@@ -9,7 +9,7 @@ APP_STORE_URL = "https://apps.apple.com/app/id6818769240"
 APP_ID = "6818769240"
 CONTACT = "iosallapps@gmail.com"
 DEVELOPER = "Visto Apps, the brand of Darius Cirjan"
-STYLE_VERSION = "20261116f"
+STYLE_VERSION = "20261116s"
 OG_ALTERNATE = {"privacy.html": ["ro_RO"], "terms.html": ["ro_RO"], "ro/privacy.html": ["en_US"], "ro/terms.html": ["en_US"]}
 OG_ALT = ("An amber serum bottle and a cream jar, half on a stone block in leafy light and half on a "
           "clean blush background, next to the words: Take the photo. Skip the studio.")
@@ -73,7 +73,7 @@ def head(title, description, path, locale="en_US", alternates=None, noindex=Fals
     <title>{title}</title>
     <meta name="description" content="{description}">
     <meta name="apple-itunes-app" content="app-id={APP_ID}">
-    <meta name="theme-color" content="#130e12">
+    <meta name="theme-color" content="#3e2f2c" data-scrolled="#130e12">
     <meta name="color-scheme" content="dark">
     {robots}<link rel="canonical" href="{url}">{alt_links}
     <meta property="og:type" content="website">
