@@ -9,7 +9,7 @@ APP_STORE_URL = "https://apps.apple.com/app/id6818769240"
 APP_ID = "6818769240"
 CONTACT = "iosallapps@gmail.com"
 DEVELOPER = "Visto Apps, the brand of Darius Cirjan"
-STYLE_VERSION = "20261116s"
+STYLE_VERSION = "20261116t"
 OG_ALTERNATE = {"privacy.html": ["ro_RO"], "terms.html": ["ro_RO"], "ro/privacy.html": ["en_US"], "ro/terms.html": ["en_US"]}
 OG_ALT = ("An amber serum bottle and a cream jar, half on a stone block in leafy light and half on a "
           "clean blush background, next to the words: Take the photo. Skip the studio.")

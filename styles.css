@@ -85,7 +85,7 @@ section { position: relative; }
 .site-header { position: sticky; top: 0; z-index: 50; padding: calc(14px + env(safe-area-inset-top)) 0 14px; transition: background .3s var(--ease); }
 .site-header.is-scrolled { background: rgba(19, 14, 18, .78); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--text); font-weight: 600; font-size: 24px; letter-spacing: -.02em; text-decoration: none; }
+.brand { flex-shrink: 0; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--text); font-weight: 600; font-size: 24px; letter-spacing: -.02em; text-decoration: none; }
 .brand:hover { color: var(--text); }
 .brand img { width: 38px; height: 38px; border-radius: 22.5%; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
 .nav {
@@ -105,7 +105,8 @@ section { position: relative; }
     .brand img { width: 34px; height: 34px; }
     .nav a { padding: 0 11px; }
 }
-@media (max-width: 374px) {
+/* brand (~153 px) + Support + Get the app (~194 px) need about 415 px of screen */
+@media (max-width: 419px) {
     .nav .nav-narrow-hide { display: none; }
 }
 
@@ -379,6 +380,8 @@ h1 em, h2 em, .accent {
     .compare, .backdrops > figure, .swatch-group, .categories, .details, .plans, .privacy-card, .closing-inner, .faq, .contact { margin-inline: -12px; width: auto; }
     .compare { max-width: none; }
     .privacy-card, .closing-inner { padding: 36px 22px 40px; }
+    /* .closing-inner is its own .wrap (no outer gutter), so -12 px would reach past the screen */
+    .closing-inner { margin-inline: 16px; }
     .legal-toc ol { columns: 1; }
     .legal-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .legal-table, .legal-table tbody, .legal-table tr, .legal-table th, .legal-table td { display: block; width: 100%; }
