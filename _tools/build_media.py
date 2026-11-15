@@ -1,11 +1,10 @@
 """Build every image the site uses from real app output.
 
-    python3 _tools/build_media.py PIPELINE_OUT SCREENS_DIR
+    python3 _tools/build_media.py PIPELINE_OUT
 
 PIPELINE_OUT holds the renders written by _tools/render_pipeline.swift: the app's own
 StudioPipeline package run on macOS over the sample photos bundled in the app, one file per
-photo and background, named "<photo>__<preset id>.bin". SCREENS_DIR holds simulator captures of
-the app (c1 result, c3 batch, c5 gallery, c6 new photo). Nothing is retouched: images are only
+photo and background, named "<photo>__<preset id>.bin". Nothing is retouched: images are only
 cropped, resized and re-encoded. One exception, made before the pipeline ran: the maker's name
 and logo were painted out of the watch dial in the watches sample, so no brand shows on the site.
 
@@ -90,7 +89,7 @@ def framed(box, size, aspect, padding):
     return tuple(round(v) for v in (x0, y0, x0 + w, y0 + h))
 
 
-def main(pipe, screens):
+def main(pipe):
     os.makedirs(IMG, exist_ok=True)
 
     def render(photo, preset):
@@ -125,20 +124,21 @@ def main(pipe, screens):
         save(out.crop(crop), f"cat-{photo}", (420, 700))
         save(original(photo), f"cat-{photo}-before", (260,), formats=("webp", "jpg"))
 
-    # App screens, shown whole.
-    for name, label in (("c6", "screen-new"), ("c1", "screen-result"), ("c3", "screen-batch"), ("c5", "screen-gallery")):
-        save(clean(Image.open(os.path.join(screens, f"{name}.png"))), label, (360, 640))
-
     icon = clean(Image.open(os.path.join(ASSETS, "AppIcon.appiconset/appiconstudio 1.png")))
     for size, name in ((16, "favicon-16.png"), (32, "favicon-32.png"), (180, "apple-touch-icon.png")):
         icon.resize((size, size), Image.LANCZOS).save(os.path.join(SITE, name), optimize=True)
     icon.resize((48, 48), Image.LANCZOS).save(os.path.join(SITE, "favicon.ico"), sizes=[(16, 16), (32, 32), (48, 48)])
-    for size in (64, 128, 256):
-        icon.resize((size, size), Image.LANCZOS).save(os.path.join(IMG, f"app-icon-{size}.webp"), "WEBP", quality=88, method=6)
-        icon.resize((size, size), Image.LANCZOS).save(os.path.join(IMG, f"app-icon-{size}.png"), optimize=True)
+    # Only the sizes and formats the pages ask for: 64 and 256 as webp, 128 and 256 as png.
+    for size, fmt in ((64, "webp"), (128, "png"), (256, "webp"), (256, "png")):
+        resized = icon.resize((size, size), Image.LANCZOS)
+        path = os.path.join(IMG, f"app-icon-{size}.{fmt}")
+        if fmt == "webp":
+            resized.save(path, "WEBP", quality=88, method=6)
+        else:
+            resized.save(path, optimize=True)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         raise SystemExit(__doc__)
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1])
