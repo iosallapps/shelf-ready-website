@@ -9,7 +9,8 @@ APP_STORE_URL = "https://apps.apple.com/app/id6818769240"
 APP_ID = "6818769240"
 CONTACT = "iosallapps@gmail.com"
 DEVELOPER = "Visto Apps, the brand of Darius Cirjan"
-STYLE_VERSION = "4"
+STYLE_VERSION = "20261115"
+OG_ALTERNATE = {"privacy.html": ["ro_RO"], "terms.html": ["ro_RO"], "ro/privacy.html": ["en_US"], "ro/terms.html": ["en_US"]}
 OG_ALT = ("An amber serum bottle and a cream jar, half on a stone block in leafy light and half on a "
           "clean blush background, next to the words: Take the photo. Skip the studio.")
 
@@ -57,23 +58,27 @@ FOOTER = f"""<footer class="site-footer">
                 </nav>
             </div>
             <p class="footer-note">&copy; 2026 {DEVELOPER}. Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+            <p class="footer-made"><a href="https://vistoapps.com/apps.html">More apps by Visto Apps</a> &middot; Made by <a href="https://vistoapps.com">Visto Apps</a></p>
         </div>
     </footer>"""
 
 
-def head(title, description, path):
+def head(title, description, path, locale="en_US", alternates=None, noindex=False):
     url = SITE + "/" + path
+    robots = '<meta name="robots" content="noindex, follow">\n    ' if noindex else ""
+    alt_links = "".join(f'\n    <link rel="alternate" hreflang="{l}" href="{SITE}/{h}">' for l, h in (alternates or []))
+    alt_locales = "".join(f'\n    <meta property="og:locale:alternate" content="{o}">' for o in (OG_ALTERNATE.get(path) or []))
     return f"""<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>{title}</title>
     <meta name="description" content="{description}">
     <meta name="apple-itunes-app" content="app-id={APP_ID}">
-    <meta name="theme-color" content="#F1E4D4">
-    <meta name="color-scheme" content="light">
-    <link rel="canonical" href="{url}">
+    <meta name="theme-color" content="#130e12">
+    <meta name="color-scheme" content="dark">
+    {robots}<link rel="canonical" href="{url}">{alt_links}
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ShelfReady">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="{locale}">{alt_locales}
     <meta property="og:url" content="{url}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
@@ -90,6 +95,6 @@ def head(title, description, path):
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/albert-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css?v={STYLE_VERSION}">"""

@@ -16,40 +16,38 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import partials  # noqa: E402
+import jsonld  # noqa: E402
 
 SITE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEGAL_DIR = os.path.join(SITE_DIR, "_tools", "legal")
 
 HAND_PAGES = {
     "index.html": (
-        "ShelfReady: product photos for people who sell their things",
-        "Take a photo of something you are selling. ShelfReady lifts it off whatever it was lying "
-        "on and sets it on a clean backdrop with a soft shadow, sized for your listing. On your "
-        "iPhone, with nothing uploaded.",
+        "ShelfReady: Product Photos and Background Remover",
+        "Take a photo of what you sell. ShelfReady removes the background and sets it on a clean studio backdrop with a soft shadow. On iPhone, nothing uploaded. Free.",
         "",
     ),
     "support.html": (
-        "Support | ShelfReady",
-        "Help with ShelfReady: removing backgrounds, fixing a cutout, free saves, restoring "
-        "purchases, managing your subscription, deleting photos and privacy choices.",
+        "Support | ShelfReady Product Photos",
+        "Help with ShelfReady: removing backgrounds, fixing a cutout, free saves, restoring purchases, managing a subscription, deleting photos and privacy choices.",
         "support.html",
     ),
     "404.html": (
         "Page not found | ShelfReady",
-        "This page is not on shelfreadyapp.com.",
+        "This page is not on shelfreadyapp.com. Go back to ShelfReady, the product photo app that removes the background on your iPhone.",
         "404.html",
     ),
 }
 
 LEGAL_PAGES = {
     "privacy.html": ("privacy", "en", "Privacy Policy | ShelfReady",
-                     "How ShelfReady handles your data. Your photos are edited on your device and never uploaded."),
+                     "How ShelfReady handles your data. Your product photos are edited on your device and never uploaded. What the ads, analytics and purchases services receive."),
     "terms.html": ("terms", "en", "Terms of Use | ShelfReady",
-                   "The terms for using ShelfReady, including free saves, subscriptions and the lifetime purchase."),
+                   "The terms for using ShelfReady, the product photo app: free saves, subscriptions, the lifetime purchase, ads and your responsibility for the photos you publish."),
     "ro/privacy.html": ("privacy", "ro", "Politica de confidențialitate | ShelfReady",
-                        "Cum tratează ShelfReady datele tale. Pozele tale sunt editate pe dispozitiv și nu sunt încărcate nicăieri."),
+                        "Cum tratează ShelfReady datele tale. Pozele de produs rămân pe dispozitiv și nu sunt încărcate. Ce primesc serviciile de reclame, statistici și achiziții."),
     "ro/terms.html": ("terms", "ro", "Termeni de utilizare | ShelfReady",
-                      "Termenii de utilizare ShelfReady, inclusiv salvările gratuite, abonamentele și achiziția pe viață."),
+                      "Termenii de utilizare ShelfReady, aplicația pentru poze de produs: salvări gratuite, abonamente, achiziția pe viață, reclame și pozele publicate."),
 }
 
 OTHER_LANG = {
@@ -67,10 +65,11 @@ def legal_page(kind, lang, page_title, description, path):
         body = f.read()
     prefix = "../" if path.startswith("ro/") else ""
     other_href, other_label, other_lang = OTHER_LANG[(kind, lang)]
-    head = partials.head(page_title, description, path)
+    en_path, ro_path = (f"{kind}.html", f"ro/{kind}.html")
+    alternates = [("en", en_path), ("ro", ro_path), ("x-default", en_path)]
+    head = partials.head(page_title, description, path, locale="ro_RO" if lang == "ro" else "en_US", alternates=alternates)
     if prefix:
         head = re.sub(r'(href|src)="(?!https?:|mailto:|#|/)', r'\1="' + prefix, head)
-        head = head.replace('property="og:locale" content="en_US"', 'property="og:locale" content="ro_RO"')
     header = partials.header()
     footer = partials.FOOTER
     if prefix:
@@ -80,9 +79,10 @@ def legal_page(kind, lang, page_title, description, path):
 <html lang="{lang}">
 <head>
     {head}
-    <link rel="alternate" hreflang="{other_lang}" href="{partials.SITE}/{other_href.replace('../', '')}">
+    {jsonld.legal(kind, lang, page_title, path)}
 </head>
 <body>
+    <div class="animated-bg" aria-hidden="true"></div>
     <a class="skip-link" href="#main">Skip to content</a>
     {header}
 
@@ -113,7 +113,8 @@ def main():
         file = os.path.join(SITE_DIR, name)
         with open(file, encoding="utf-8") as f:
             page = f.read()
-        page = replace_region(page, "head", partials.head(title, description, path))
+        page = replace_region(page, "head", partials.head(title, description, path, noindex=(name == "404.html")))
+        page = replace_region(page, "ld", jsonld.hand(name, page))
         page = replace_region(page, "header", partials.header(name))
         page = replace_region(page, "footer", partials.FOOTER)
         if name == "404.html":

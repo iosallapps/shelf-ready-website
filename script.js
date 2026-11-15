@@ -1,8 +1,16 @@
-// shelfreadyapp.com: three small behaviours, each optional. The page reads fine without them.
+// shelfreadyapp.com: four small behaviours, each optional. The page reads fine without them.
 (function () {
     'use strict';
 
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // 0. The header gets a soft backing once the page scrolls.
+    var header = document.querySelector('.site-header');
+    if (header) {
+        var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
 
     // 1. Support: open the answer a link points at (support.html#restore), so links from the
     //    app land on it.

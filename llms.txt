@@ -1,0 +1,16 @@
+# ShelfReady
+
+> ShelfReady is an iPhone app for people who sell things. Take a photo of an item, and the app removes the background and sets the item on a clean studio backdrop with a soft shadow, sized for your listing. Photos are edited on the device and never uploaded.
+
+- Platform: iPhone, iOS 18.0 or later. No Android or web version.
+- Price model: free to download. The first 3 saves are free; unlimited saving and sharing, saving a batch of photos at once and no ads come with a weekly or monthly subscription, or a yearly plan or one-time lifetime purchase offered in the app.
+- Made by Visto Apps, the brand of Darius Cirjan: https://vistoapps.com (more apps: https://vistoapps.com/apps.html)
+- Contact: iosallapps@gmail.com
+
+## Pages
+
+- [Home](https://shelfreadyapp.com/): what the app does, backgrounds, steps, pricing
+- [Support](https://shelfreadyapp.com/support.html): answers about cutouts, free saves, restoring purchases, deleting photos, privacy choices
+- [Privacy Policy](https://shelfreadyapp.com/privacy.html) (Romanian: https://shelfreadyapp.com/ro/privacy.html)
+- [Terms of Use](https://shelfreadyapp.com/terms.html) (Romanian: https://shelfreadyapp.com/ro/terms.html)
+- [App Store](https://apps.apple.com/app/id6818769240)
